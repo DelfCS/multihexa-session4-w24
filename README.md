@@ -1,6 +1,6 @@
 <h3>W24 - Développement d'applications mobiles</h3>
 
-Pour ce cours, le but du projet étalé sur toute la durée du cours était de créer un site web de style 'forum', avec un register et un login fonctionnel (avec l'aide de Identity), ainsi qu'une gestion des permissions de chaques utilisateurs appropriée. Le projet comprend également la modélisation de base de donnée SQL à l'aide de SSMS.
+Pour ce cours, le but du projet était de créer un site web de style 'forum', avec un register et un login fonctionnel (avec l'aide de Identity), ainsi qu'une gestion de permissions des utilisateurs appropriée. Le projet comprend également la modélisation de base de donnée SQL à l'aide de SSMS.
 
 <hr>
 
