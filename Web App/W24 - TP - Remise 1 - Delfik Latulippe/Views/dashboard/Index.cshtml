@@ -1,0 +1,84 @@
+﻿<!-- ON ACCORDE LE BON TYPE -->
+@model IEnumerable<W24___TP___Remise_1___Delfik_Latulippe.Tools.Dashboard>
+
+@{
+    ViewData["Title"] = "Index";
+    var totalPosts = 0;
+    var totalReplies = 0;
+    var totalUsers = 0;
+}
+
+<!-- DASH BOARD -->
+<div class="row d-flex text-center justify-content-center pinkText px42Txt mb-5">
+    DASHBOARD
+</div>
+<table class="table grayText">
+    <thead>
+        <tr>
+            <th class="w-20"> USER </th>
+            <th class="w-20"> POST </th>
+            <th class="w-20"> REPLIES </th>
+            <th class="w-40"> LAST ACTIVITY </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>@item.UserName</td> @*USERNAME*@
+            <td>@item.UserPosts</td> @*POSTS AMOUNT*@
+            <td>@item.UserReplies</td> @*REPLIES AMOUNT*@
+                                        
+            <td> @*LAST ACTIVITY*@
+                @if(item.UserLastActivity == DateTime.MinValue){
+                    @Html.Raw("NO ACTIVITY")
+                }else{
+                        @item.UserLastActivity
+                }
+            </td> 
+            </tr>
+
+            totalPosts += item.UserPosts;
+            totalReplies += item.UserReplies;
+            totalUsers += 1;
+        }
+    </tbody>
+</table>
+
+<!-- Extra INFO -->
+<table class="table grayText">
+    <thead>
+        <tr>
+            <th class="w-20"> TOTAL USERS </th>
+            <th class="w-20"> TOTAL POSTS </th>
+            <th class="w-20"> TOTAL REPLIES </th>
+            <th class="w-40"> LAST ACTIVITY </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>@totalUsers</td> @*REPLIES AMOUNT*@
+                <td>@totalPosts</td> @*USERNAME*@
+                <td>@totalReplies</td> @*POSTS AMOUNT*@
+                <td>
+                @{
+                    @*LAST ACTIVITY*@
+                    DateTime? lastActivity = DateTime.MinValue;
+                    foreach (var item in Model)
+                    {
+                        if(item.UserLastActivity > lastActivity){
+                            lastActivity = item.UserLastActivity;
+                        }
+                    }
+                    @if (lastActivity == DateTime.MinValue)
+                    {
+                        @Html.Raw("NO ACTIVITY");
+                    }else
+                    {
+                        @Html.Raw(lastActivity.Value);
+                    }
+                }
+                </td>
+            </tr>
+ 
+    </tbody>
+</table>

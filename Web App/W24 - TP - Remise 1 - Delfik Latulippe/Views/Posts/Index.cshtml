@@ -1,0 +1,158 @@
+﻿@using W24___TP___Remise_1___Delfik_Latulippe.Tools
+@model PaginatedList<W24___TP___Remise_1___Delfik_Latulippe.Models.Post>
+@{
+	ViewData["Title"] = "Index";
+}
+
+<!------ POSTS - INDEX  ------>
+
+<!-- Discussions / post details -->
+<div class="row d-flex text-center justify-content-center mb-3">
+	<!-- TOPIC NAME -->
+	<div class="px42Txt pinkText">
+		@Model.First().Topic.Name
+	</div>
+
+	<!-- TITLE -->
+	<div class="grayText px24Txt">
+		Posts
+	</div>
+</div>
+
+<!-- DISPLAY TABLE -->
+<table class="table display-table grayText">
+	<thead>
+		<tr>
+			<!-- USER ID -->
+			<th class="">Username</th>
+			<!-- TITLE -->
+			<th>Title</th>
+			<!-- DATE POSTED -->
+			<th>Date</th>
+			<!-- LAST REPLY DATE -->
+			<th>Last reply </th>
+			<!-- LAST USER TO REPLY -->
+			<th>Last user to reply </th>  <!-- ******** A CHANGER ******** -->
+			<!-- VIEWS -->
+			<th>Views</th>
+			<!-- REPLIES -->
+			<th>Replies</th>
+			<th class="col-1"></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<!-- USER ID -->
+				<td class="grayText">
+					@Html.DisplayFor(modeItem => item.User.UserName)
+				</td>
+				<!-- TITLE -->
+				<td class="grayText">
+					@Html.DisplayFor(modelItem => item.Title)
+				</td>
+				<!-- DATE POSTED -->
+				<td class="grayText">
+					@Html.DisplayFor(modelItem => item.Date)
+				</td>y
+				<!-- LAST REPLY DATE -->
+				<td class="grayText">
+					@Html.DisplayFor(model => item.Date)
+				</td>
+				<!-- LAST USER TO REPLY --> <!-- RECHECK -->
+				<td class="grayText">
+					@Html.DisplayFor(modelItem => item.Discussions.OrderByDescending(d=>d.Date).FirstOrDefault().User.UserName)
+				</td>
+				<!-- VIEWS -->
+				<td class="grayText">
+					@Html.DisplayFor(modelItem=> item.Views)
+				</td>
+				<!-- REPLIES -->
+				<td class="grayText">
+					@(Html.Raw(item.Discussions.Where(d=>d.Active ==true).Count()))
+				</td>
+				<!-- BUTTONS -->
+				<td class="text-center">
+					<!-- VIEW POST -->
+					@if(item.Discussions.Where(d=>d.Active == true).Count() > 0){
+						// Avec discussions
+						<a asp-controller="Discussions" asp-action="Index" asp-route-postId="@item.PostId" class="hover-effect">VIEW POST</a>
+					}else{
+						// Sans discussions
+						<a asp-controller="Posts" asp-action="Details" asp-route-postId="@item.PostId" class="hover-effect">VIEW POST</a>
+					}
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="text-center mt-5">
+	<!-- NAVIGATION -->
+	@{
+		var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+		var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+	}
+	@*First*@
+	<a class="btn btn-dark @prevDisabled"
+	   asp-action="index"
+	   asp-route-topicId="@Model.First().TopicId"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="1">
+		FIRST
+	</a>
+	@*Previous*@
+	<a class="btn btn-dark @prevDisabled"
+	   asp-action="index"
+	   asp-route-topicId="@Model.First().TopicId"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="@(Model.PageIndex-1)">
+		PREVIOUS
+	</a>
+
+	@*Current*@
+	<a class="btn btn-dark disabled">@Model.PageIndex / @Model.TotalPages</a>
+
+	@*Next*@
+	<a class="btn btn-dark @nextDisabled"
+	   asp-action="index"
+	   asp-route-topicId="@Model.First().TopicId"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="@(Model.PageIndex+1)">
+		NEXT
+	</a>
+
+	@*Last*@
+	<a class="btn btn-dark @nextDisabled"
+	   asp-action="index"
+	   asp-route-topicId="@Model.First().TopicId"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="@Model.TotalPages">
+		LAST
+	</a>
+	<br>
+	@*Items per page*@
+	<div class="grayText mt-2">
+		Items per page:
+		<br />
+		<a asp-action="Index" asp-route-customPageSize="5" asp-route-topicId="@Model.First().TopicId" asp-route-pageNumber="@Model.PageIndex">5</a>
+		<a asp-action="Index" asp-route-customPageSize="10" asp-route-topicId="@Model.First().TopicId" asp-route-pageNumber="@Model.PageIndex">10</a>
+		<a asp-action="Index" asp-route-customPageSize="25" asp-route-topicId="@Model.First().TopicId" asp-route-pageNumber="@Model.PageIndex">25</a>
+		<a asp-action="Index" asp-route-customPageSize="0" asp-route-topicId="@Model.First().TopicId" asp-route-pageNumber="@Model.PageIndex">ALL</a>
+	</div>
+
+</div>
+
+<div class="row mt-4">
+	<!-- BACK TO TOPICS -->
+	<div class="col-6 text-center">
+		<a class="crudBtns1" asp-controller="Topics" asp-action="Index">BACK</a>
+	</div>
+	<!-- MAKE A POST -->
+	<div class="col-6 text-center">
+		<a class="crudBtns1" asp-controller="Posts" asp-action="Create" asp-route-topicId="@Model.First().TopicId">POST</a>
+	</div>
+</div>
+
+

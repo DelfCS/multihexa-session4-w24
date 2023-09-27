@@ -1,0 +1,50 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Topic
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<!-- *** TOPIC - EDIT *** -->
+
+<div class="row d-flex text-center justify-content-center mb-5">
+	<div class="pinkText px42Txt">
+		@Model.Name
+	</div>
+	<div class="px32Txt grayText">
+		Edit
+	</div>
+</div>
+
+<div class="d-flex justify-content-center text-center">
+	<form asp-action="Edit" class="row">
+		<input type="hidden" asp-for="TopicId" />
+		<input type="hidden" asp-for="Active" />
+		<!-- TOPIC NAME -->
+		<div class="form-group grayText">
+			Topic Name
+			<input asp-for="Name" class="form-control" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<!-- TOPIC DESCRIPTION -->
+		<div class="form-group grayText mt-3">
+			Topic Description
+			<input asp-for="Description" class="form-control myTextArea mt-3" />
+			<span asp-validation-for="Description" class="text-danger"></span>
+		</div>
+		<!-- SUBMIT -->
+		<div class="form-group mt-2">
+			<input type="Submit" value="Edit" class="w-100 btn btn-lg btn-secondary btnForms mt-3"/>
+		</div>
+	</form>
+</div>
+
+<div class="d-flex justify-content-center mt-2">
+	<a asp-action="Index">Back to Topics</a>y
+</div>
+
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

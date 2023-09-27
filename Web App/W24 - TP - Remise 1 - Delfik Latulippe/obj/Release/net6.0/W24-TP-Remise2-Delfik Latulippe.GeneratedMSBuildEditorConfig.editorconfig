@@ -1,0 +1,152 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = W24___TP___Remise_1___Delfik_Latulippe
+build_property.RootNamespace = W24___TP___Remise_1___Delfik_Latulippe
+build_property.ProjectDir = C:\Users\i9-9900k\Desktop\W24 ME\W24 - Partie 2\W24 TP2 A TRIER\W24 - TP - Remise 1 - Delfik Latulippe\W24 - TP - Remise 1 - Delfik Latulippe\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\i9-9900k\Desktop\W24 ME\W24 - Partie 2\W24 TP2 A TRIER\W24 - TP - Remise 1 - Delfik Latulippe\W24 - TP - Remise 1 - Delfik Latulippe
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/dashboard/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/dashboard/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/dashboard/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/dashboard/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/dashboard/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Discussions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Discussions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Discussions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Discussions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Discussions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzY3Vzc2lvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Posts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Posts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Posts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Posts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Posts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9zdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Topics/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Topics/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Topics/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Topics/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Topics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9waWNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/i9-9900k/Desktop/W24 ME/W24 - Partie 2/W24 TP2 A TRIER/W24 - TP - Remise 1 - Delfik Latulippe/W24 - TP - Remise 1 - Delfik Latulippe/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hwae35i18i

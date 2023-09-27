@@ -1,0 +1,56 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Discussion
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!----- DISCUSSION - CREATE ------>
+
+<!-- TOPIC NAME -->
+<div class="row d-flex text-center justify-content-center mb-5">
+    <div class="pinkText px42Txt">
+        Replying to
+    </div>
+    <div class="px24Txt grayText">
+        @* User : @ViewData["UserId"]*@
+        @Html.Raw(ViewData["PostTitle"]) <br />
+        <br />@Html.Raw(ViewData["PostText"])
+    </div>
+</div>
+
+<div class="d-flex justify-content-center text-center grayText">
+    <form asp-action="Create" class="row">
+        <!-- PostID ( hidden ) -->
+        <div class="grayText">
+            <input hidden asp-for="PostId" value="@ViewData["PostId"]"/>
+            <!-- J'assigne le user ici parce que ca créait problême ... En temps normal & dans le mesure du possible, je ne ferais l'assignation qu'au contrôleur  -->
+            <input hidden asp-for="UserId" value="@ViewData["UserId"]"/>
+        </div>
+        <!-- TEXT -->
+        <div class="px20">
+            Reply Text
+            <input asp-for="Text" class="form-control  myTextArea" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <!-- SUBMIT -->
+        <div class="form-group">
+            <input type="submit" value="Reply" class="col-8 w-100 btn btn-lg btn-secondary btnForms mt-3" />
+        </div>
+    </form>
+</div>
+
+<div class="d-flex justify-content-center mt-2">
+    @if(ViewData["Replies"].ToString() == "True"){
+        // Si il y a un reply...
+        <a asp-action="Index" asp-route-postId="@ViewData["PostId"]">Back to the post</a>
+    }else{
+        <a asp-controller="Posts" asp-action="Details" asp-route-postId="@ViewData["PostId"]">Back to the post</a>
+    }
+
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

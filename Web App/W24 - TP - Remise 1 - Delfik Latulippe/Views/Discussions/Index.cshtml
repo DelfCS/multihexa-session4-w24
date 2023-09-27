@@ -1,0 +1,220 @@
+﻿@using W24___TP___Remise_1___Delfik_Latulippe.Tools
+@model PaginatedList<W24___TP___Remise_1___Delfik_Latulippe.Models.Discussion>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+
+<!-- Discussions / post details -->
+<div class="row d-flex text-center justify-content-center mb-3">
+	<!-- TOPIC NAME -->
+	<div class="px42Txt pinkText">
+		@Model.FirstOrDefault().Post.Topic.Name
+	</div>
+
+	<!-- TITLE -->
+	<div class="grayText px24Txt">
+		@Html.Raw(Model.FirstOrDefault().Post.Title)
+	</div>
+</div>
+
+<table class="table display-table grayText">
+	<tr>
+		<!-- BY -->
+		<th class="col-3">
+			By
+		</th>
+		<!-- DATE -->
+		<th class="col-3">
+			On
+		</th>
+		<!-- VIEWS -->
+		<th class="col-2">
+			Views
+		</th>
+		<!-- REPLIES -->
+		<th class="col-2">
+			Replies
+		</th>
+		<th class="col-2"></th>
+	</tr>
+
+	<tr>
+		<!-- BY ... -->
+		<td class="col-2 grayText">
+			@Model.First().User.UserName
+		</td>
+		<!-- DATE ... -->
+		<td class="col-2 grayText">
+			@Model.FirstOrDefault().Post.Date
+		</td>
+		<!-- VIEWS ... -->
+		<td class="col-1 grayText">
+			@Model.FirstOrDefault().Post.Views
+		</td>
+		<!-- REPLIES -->
+		<td class="col-1 grayText">
+			@ViewData["Replies"]
+		</td>
+
+		<td class="text-center">
+			<!-- Si l'usager est le creator, ou l'admin-->
+			@if (User.Identity.Name == Model.First().Post.User.UserName || User.IsInRole("Admin"))
+			{
+				<!-- EDIT -->
+				<a asp-controller="Posts" asp-action="Edit" asp-route-postId="@Model.First().Post.PostId">Edit</a>
+			}
+			<!-- Si l'usager est un admin, on permet la suppression (inactive) -->
+
+			<!-- Ici, je ne permet pas la supression puisqu'il a forcément une Discussion associé au post... -->
+
+		</td>
+	</tr>
+</table>
+
+<div class="row mb-2 d-flex text-start m-lg-1 mb-2">
+	<!-- POST TEXT -->
+	@Html.Raw(Model.First().Post.Text)
+</div>
+<hr class="grayText" />
+
+
+<!-- LAST X REPLIES -->
+<div class="pinkText2 mt-5">
+	LAST @Model.Count() REPLIES
+</div>
+
+<table class="table grayText">
+	<thead>
+		<tr>
+			<th class="col-3">
+				BY
+			</th>
+			<th class="col-7">
+				ON
+			</th>
+			<th class="col-2">
+
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.Raw(item.User.UserName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Date)
+				</td>
+				<td class="text-center">
+					<a id="@("button"+@item.MsgId.ToString())" class="hover-effect" onclick="toggleDiscussionText(@item.MsgId)">View</a>
+
+					<!-- Si l'usager est le créateur, ou l'usager est l'admin, on permet la modif -->
+					@if (User.Identity.Name == Model.First().Post.User.UserName || User.IsInRole("Admin"))
+					{
+						<!-- EDIT -->
+						<a asp-action="Edit" asp-route-id="@item.MsgId">| Edit</a>
+					}
+					<!-- Si l'usager Admin, on permet la suppréssion  -->
+					@if(User.IsInRole("Admin") || User.Identity.Name == item.User.UserName)
+					{
+						<!-- DELETE -->
+						<a asp-action="Delete" asp-route-id="@item.MsgId">| Delete </a>
+					}
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div id="@("text"+@item.MsgId.ToString())" style="display:none;">
+						<div class="row mb-2 grayText d-flex text-start m-lg-1 mb-2">
+							<!-- POST TEXT -->
+							@Html.Raw(item.Text)
+						</div>
+						<hr class="grayText" />
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<div class="text-center mt-5">
+	<!-- NAVIGATION -->
+	@{
+		var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+		var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+	}
+	@*First*@
+	<a class="btn btn-dark @prevDisabled"
+	   asp-controller="Discussions"
+	   asp-action="index"
+	   asp-route-postId="@ViewData["PostId"]"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="1">
+		FIRST
+	</a>
+
+	@*Previous*@
+	<a class="btn btn-dark @prevDisabled"
+	   asp-controller="Discussions"
+	   asp-action="index"
+	   asp-route-postId="@ViewData["PostId"]"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="@(Model.PageIndex-1)">
+		PREVIOUS
+	</a>
+
+	@*Current*@
+	<a class="btn btn-dark disabled">@Model.PageIndex / @Model.TotalPages</a>
+
+	@*Next*@
+	<a class="btn btn-dark @nextDisabled"
+	   asp-controller="Discussions"
+	   asp-action="index"
+	   asp-route-postId="@ViewData["PostId"]"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="@(Model.PageIndex+1)">
+		NEXT
+	</a>
+
+	@*Last*@
+	<a class="btn btn-dark @nextDisabled"
+	   asp-controller="Discussions"
+	   asp-action="index"
+	   asp-route-postId="@ViewData["PostId"]"
+	   asp-route-customPageSize="@ViewData["CustomPageSize"]"
+	   asp-route-pageNumber="@Model.TotalPages">
+		LAST
+	</a>
+	<br>
+	@*Items per page*@
+	<div class="grayText mt-2">
+		Items per page
+		<br>
+		<a asp-action="Index" asp-route-customPageSize="5" asp-route-postId="@ViewData["PostId"]" asp-route-pageNumber="@Model.PageIndex">5</a>
+		<a asp-action="Index" asp-route-customPageSize="10" asp-route-postId="@ViewData["PostId"]" asp-route-pageNumber="@Model.PageIndex">10</a>
+		<a asp-action="Index" asp-route-customPageSize="25" asp-route-postId="@ViewData["PostId"]" asp-route-pageNumber="@Model.PageIndex">25</a>
+		<a asp-action="Index" asp-route-customPageSize="0" asp-route-postId="@ViewData["PostId"]" asp-route-pageNumber="@Model.PageIndex">ALL</a>
+	</div>
+
+</div>
+
+<div class="d-flex flex-row justify-content-around mt-4">
+	<!-- BACK TO POSTS -->
+	<a class="crudBtns1"
+	   asp-controller="Posts"
+	   asp-action="Index"
+	   asp-route-topicId="@Model.FirstOrDefault().Post.Topic.TopicId"
+	   asp-route-topicName="@ViewData["TopicName"]">BACK</a>
+	<!-- Si l'usager est le créateur ou l'admin on permet l'edit -->
+	<!-- REPLY TO POST -->
+	<a class="crudBtns1"
+	   asp-controller="Discussions"
+	   asp-action="Create"
+	   asp-route-postId="@ViewData["PostId"]"
+	   asp-route-topicName="@ViewData["TopicName"]"> REPLY</a>
+</div>
+

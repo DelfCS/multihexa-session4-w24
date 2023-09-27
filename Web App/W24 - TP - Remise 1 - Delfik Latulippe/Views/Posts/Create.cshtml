@@ -1,0 +1,51 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Post
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!-- *** POST - CREATE *** -->
+
+<div class="row d-flex text-center justify-content-center mb-5">
+    <div class="pinkText px42Txt">
+        <!-- TOPIC NAME -->
+        @ViewData["TopicName"]
+    </div>
+    <div class="px32Txt grayText">
+        Post
+    </div>
+</div>
+
+<div class="d-flex justify-content-center">
+    <form asp-action="Create" class="row">
+        <!-- TOPIC ID ( Automatic ) -->
+        <input hidden asp-for="TopicId" value="@ViewData["TopicId"]"/>
+        <!-- TITLE -->
+        <div class=" grayText ">
+            Title
+            <input asp-for="Title" class="form-control" maxlength="50" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <!-- TEXT -->
+        <div class="grayText mt-3">
+            Text
+            <input asp-for="Text" class=" myTextArea form-control" maxlength="1000" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <!-- VIEWS ( default -> 0 ) -->
+        <input hidden asp-for="Views" value="0"/>
+
+        <!-- SUBMIT -->
+        <div class="mt-2">
+            <input type="submit" value="Post" class=" w-100 btn btn-lg btn-secondary btnForms mt-3" />
+        </div>
+
+	</form>
+</div>
+
+<div class="d-flex justify-content-center mt-2">
+    <a asp-action="Index" asp-route-topicId="@ViewData["TopicId"]">Back to Posts</a>y
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

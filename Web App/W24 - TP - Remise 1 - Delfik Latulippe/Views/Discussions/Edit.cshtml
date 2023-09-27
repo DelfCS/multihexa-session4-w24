@@ -1,0 +1,46 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Discussion
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<!-- *** DISCUSSION - EDIT *** -->
+
+<div class="row d-flex text-center justify-content-center mb-5">
+	<div class="pinkText px42Txt">
+		Edit reply
+	</div>
+
+</div>
+
+<div class="d-flex justify-content-center text-center">
+	<form class="row" asp-action="Edit">
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+		<input hidden asp-for="UserId" />
+		<input hidden asp-for="Date" />
+		<input hidden asp-for="Active" />
+		<input hidden asp-for="MsgId" />
+		<input hidden asp-for="PostId" />
+
+		<!-- DISCUSSION TEXT -->
+		<div class="grayText">
+			Reply text
+			<input asp-for="Text" class="form-control myTextArea mt-3" />
+			<span asp-validation-for="Text" class="text-danger"></span>
+		</div>
+		<!-- SUBMIT -->
+		<div class="mt-2">
+			<input type="Submit" value="Edit" class="w-100 btn btn-lg btn-secondary btnForms mt-3" />
+		</div>
+	</form>
+</div>
+<!-- BACK TO POST -->
+<div class="d-flex justify-content-center mt-2">
+	<a asp-action="Index" asp-route-postId="@Model.PostId">Back to post</a>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

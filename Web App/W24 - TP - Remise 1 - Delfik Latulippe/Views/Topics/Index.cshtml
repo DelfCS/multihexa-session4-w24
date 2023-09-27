@@ -1,0 +1,105 @@
+﻿@model IEnumerable<W24___TP___Remise_1___Delfik_Latulippe.Models.Topic>
+
+@{
+	ViewData["Title"] = "Index";
+}<!-- HOME INDEX, MAIN VIEW -->
+
+<div class="row justify-content-around d-flex">
+	@foreach (var item in Model) // Pour chaque catégorie dans la liste ( TOPIC )
+	{
+		<div class="card text-center mb-5 w-75">
+			<div class="card-header">
+				<!-- TOPIC NAME -->
+				<div class="card-img-top mt-2 d-flex justify-content-center pinkText2 px32Txt text-center">
+					@item.Name
+				</div>
+				<!-- TOPIC DESCRIPTION -->
+				<div class="card-body text-center">
+					<p class="card-text">@Html.Raw(item.Description)</p>
+				</div>
+				<!-- TOPIC INFORMATION -->
+				<ul class="">
+					<!-- NUMBER OF POSTS -->
+					<li class="card-text">@item.Posts.Where(p=>p.Active == true).Count() Posts</li> @*NBR DE POST*@
+					<!-- LAST ACTIVITY -->
+					<li class="">
+						Last Activity |
+						@{
+							if (item.Posts.OrderBy(i => i.Date).FirstOrDefault() != null)
+							{
+								@item.Posts.OrderBy(i=>i.Date).FirstOrDefault().Date @*LAST ACTIVITY*@
+							}
+							else
+							{
+								@Html.Raw("None")
+							}
+						}
+					</li>
+				</ul>
+			</div>
+			<div class="card-body">
+				<!-- LAST 3 POSTS-->
+				<p class="darkerText">
+					Last 3 posts:
+					@{
+						var lastPosts = item.Posts.OrderByDescending(p => p.Date).Take(3);
+						foreach (var post in lastPosts)
+						{
+							<div class="card-text">@Html.Raw(post.Title)</div>
+						}
+					}
+				</p>
+			</div>
+			<div class="card-footer">
+				<!-- LINKS -->
+				<div class="d-flex justify-content-center row">
+					@*<a asp-controller="Topics" asp-action="Details" asp-route-id="@item.TopicId">Details</a>*@
+					<!-- SEE TOPIC -->
+					@if (item.Posts.Where(p => p.Active == true).Count() > 0)
+					{
+						// Si il a un post associé, on se redirige vers la vue qui inclue les posts
+						<div class="col-12 d-flex justify-content-center mt-2">
+							<a class="pinkText2 px28Txt"
+								asp-controller="Posts"
+								asp-action="Index"
+								asp-route-topicId="@item.TopicId">Voir les posts</a>
+						</div>
+					}
+					else
+					{
+						// Aussinon, on redirige vers une vue vide de post
+						<div class="col-12 d-flex justify-content-center mt-2">
+							<a class="pinkText2 px28Txt"
+								asp-controller="Posts"
+								asp-action="Create"
+								asp-route-topicId="@item.TopicId">Be the first to post !</a>
+						</div>
+					}
+					<!-- Disponible seulement pour les administrateurs du site -->
+					@if (User.IsInRole("Admin"))
+					{
+						<!-- EDIT TOPIC -->
+						<div class="col-12 d-flex justify-content-center mt-1">
+							<a class="crudBtns3" asp-controller="Topics" asp-action="Edit" asp-route-id="@item.TopicId">Edit topic</a>
+						</div>
+						if(item.Posts.Where(p=>p.Active == true).Count() == 0){
+							<!-- DELETE TOPIC -->
+							<div class="col-12 d-flex justify-content-center mt-2">
+								<a class="crudBtns3" asp-controller="Topics" asp-action="Delete" asp-route-id="@item.TopicId">Delete topic</a>
+							</div>
+						}
+					}
+				</div>
+			</div>
+		</div>
+	}
+</div>
+@if(User.IsInRole("Admin")){
+	<!-- CREATE TOPIC -->
+	<div class="row d-flex justify-content-center">
+		<div class="col-12 d-flex justify-content-center">
+			<a class="crudBtns1" asp-controller="Topics" asp-action="Create">Create topic</a>
+		</div>
+	</div>
+}
+

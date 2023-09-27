@@ -1,0 +1,55 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Post
+@{
+	ViewData["Title"] = "Edit";
+}
+
+<!-- *** POST - EDIT *** -->
+
+<div class="row d-flex text-center justify-content-center mb-5">
+	<div class="pinkText px42Txt">
+		@ViewData["TopicName"]
+	</div>
+	<div class="px32Txt grayText">
+		Edit post
+	</div>
+</div>
+
+<div class="d-flex justify-content-center text-center">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+	<form class="row" asp-action="Edit">
+		<input type="hidden" asp-for="PostId" />
+		<input type="hidden" asp-for="TopicId" />
+		<input type="hidden" asp-for="UserId" />
+		<input type="hidden" asp-for="Date"/>
+		<input type="hidden" asp-for="Active" />
+		<input type="hidden" asp-for="Views" />
+
+		<!-- POST TITLE -->
+		<div class="grayText">
+			Post Title
+			<input asp-for="Title" class="form-control" maxlength="50" />
+			<span asp-validation-for="Title" class="text-danger"></span>
+		</div>
+		<!-- POST TEXT -->
+		<div class="grayText">
+			Post Text
+			<input asp-for="Text" class="form-control  myTextArea mt-3" maxlength="1000" />
+			<span asp-validation-for="Text" class="text-danger"></span>
+		</div>
+		<!-- SUBMIT -->
+		<div class="mt-2">
+			<input type="Submit" value="Edit" class="w-100 btn btn-lg btn-secondary btnForms mt-3" />
+		</div>
+	</form>
+</div>
+ <!-- BACK TO POSTS -->
+<div class="d-flex justify-content-center mt-2">
+	<a asp-action="Index" asp-route-topicId="@Model.TopicId">Back to posts</a>
+</div>
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

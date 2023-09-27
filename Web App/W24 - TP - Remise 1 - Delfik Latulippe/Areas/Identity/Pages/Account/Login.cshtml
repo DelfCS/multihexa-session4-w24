@@ -1,0 +1,62 @@
+﻿@page
+@model LoginModel
+
+@{
+	ViewData["Title"] = "Log in";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="d-flex">
+	<form id="account" method="post" class="loginRegister row">
+		<hr />
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+		<!-- USERNAME -->
+		<div class="col-12 mb-3 loginRegisterForm form-floating">
+			<input asp-for="Input.UserName" class="form-control" autocomplete="username" aria-required="true" />
+			<label asp-for="Input.UserName" class="form-label"></label>
+			<span asp-validation-for="Input.UserName" class="text-danger"></span>
+		</div>
+
+		<!-- PASSWORD -->
+		<div class="col-12 mb-3 loginRegisterForm form-floating">
+			<input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+			<label asp-for="Input.Password" class="form-label"></label>
+			<span asp-validation-for="Input.Password" class="text-danger"></span>
+		</div>
+
+		<!-- REMEMBER ME ? -->
+		<div>
+			<div class="col-12 checkbox loginRegister ">
+				<label asp-for="Input.RememberMe" class="form-label grayText">
+					<input class="grayText" asp-for="Input.RememberMe" />
+					Remember me
+				</label>
+			</div>
+		</div>
+
+		<!-- SUBMIT -->
+		<div class="col-12 loginRegisterForm">
+			<button id="login-submit" type="submit " class="col-8 w-100 btn btn-lg btn-secondary btnForms">Log in</button>
+			</divclass>
+
+			<div>
+				<p>
+					<!-- FORGOT PASSWORD ? -->
+					@*<a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>*@
+				</p>
+				<p>
+					<a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register instead</a>
+				</p>
+				<p>
+					<!-- EMAIL CONFIRMATION -->
+					@*<a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>*@
+				</p>
+			</div>
+	</form>
+</div>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+	}

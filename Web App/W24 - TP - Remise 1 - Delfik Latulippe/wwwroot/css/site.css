@@ -1,0 +1,204 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}*/
+
+.display-table {
+    color: white;
+}
+
+.grayText{
+    color: darkgray;
+}
+
+.topicDescription {
+    min-height: 75px;
+    max-height: 75px;
+}
+
+/* Pour garder le banner en place */
+.main-banner2 {
+    background-image: url(~/assets/images/banner-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    min-height: 150px;
+    border-radius: 23px;
+    padding: 80px 60px;
+}
+
+    .main-banner2 h6 {
+        font-size: 28px;
+        color: #fff;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .main-banner2 h4 {
+        font-size: 48px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+        .main-banner2 h4 em {
+            font-style: normal;
+            color: #ec6090;
+        }
+
+
+.textTitlePost {
+    
+}
+
+postText{
+    margin-bottom 3;
+}
+
+.darkerText {
+color:slategray;
+}
+.pinkText {
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-style: normal;
+    color: #ec6090;
+}
+
+.pinkText2 {
+    color: #ec6090;
+}
+
+.pinkTextReply {
+    color: #ec6090;
+    font-size: 24px;
+}
+
+.loginRegisterForm {
+    max-width: 60%;
+    min-width: 60%
+}
+.crudForm {
+    max-width: 100%;
+    min-width: 0%
+}
+.btnForms {
+    background-color: lightgray;
+    color: #ec6090;
+    font-weight: 500;
+}
+.myBtn{
+    background-color: lightgray;
+    color: #ec6090;
+    font-weight: 500;
+}
+.myByn:disabled{
+    background-color: lightgray;
+    color: #ec6090;
+    font-weight: 500;
+}
+
+
+.crudSubmitBtns {
+    color: darkgray;
+    min-width: 25%;
+    max-width:;
+}
+
+.px20Txt {
+    font-size: 22px;
+}
+.px24Txt {
+    font-size: 24px;
+}
+.px28Txt {
+    font-size: 28px;
+}
+.px32Txt {
+    font-size: 32px;
+}
+.px40Txt {
+    font-size: 40px;
+}
+
+.crudBtns1 {
+    color: darkgray;
+    font-size: 40px;
+}
+.crudBars1 {
+    font-size: 42px;
+    font-style: normal;
+    color: #ec6090;
+}
+.crudBtns2 {
+    color: gray;
+    font-size: 28px;
+}
+.crudBars2 {
+    font-size: 26px;
+    font-style: normal;
+    color: #ec6090;
+}
+.crudBtns3 {
+    color: grey;
+    font-size: 16px;
+}
+
+.crudBars3 {
+    font-size: 16px;
+    font-style: normal;
+    color: #ec6090;
+}
+.myCards {
+    min-width: 28%;
+}
+
+.myCardTop{
+    min-height: 80px;
+}
+.myCardDesc{
+    min-height: 140px;
+}
+.myCardBottom{
+    min-height: 145px;
+    max-height: 145px;
+}
+.mw50{
+    max-width:50%;
+}
+.btnSize{
+    width: 200px;
+}
+.w-20{
+    width: 20%;
+}
+.w-40 {
+    width: 40%;
+}
+.hover-effect:hover{
+    cursor: grab;
+}
+.card{
+    background-color: lightgray;
+}
+.card-footer{
+       color: #ec6090;
+}
+.myBtnDark{
+    color:darkgray;
+    background-color:transparent;
+    border:none;
+}

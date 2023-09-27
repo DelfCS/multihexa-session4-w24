@@ -1,0 +1,38 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Topic
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<!----- DELETE - TOPIC ----->
+
+<div class ="d-flex row justify-content-center text-center grayText">
+    <div class="col-12 px40Txt pinkText2">
+    DELETE
+    </div>
+
+    <!-- WARNING TO USER -->
+    <div class="col-12 px32Txt mb-2">
+        Are you <b class="pinkText2">SURE</b> you want to delete the <b><i>@Model.Name</i></b> Topic ?
+    </div>
+    <div class="px20Txt">
+        No going back 
+    </div>
+
+    <div class="mt-5 col-12">
+        <form asp-action="Delete">
+            <div class="col-12">
+
+                <!-- DELETE BUTTON -->
+                <input type="hidden" asp-for="TopicId" />
+                <input type="submit" value="Delete" class="w-auto btn btn-lg btn-secondary btnForms" />
+            </div>
+
+            <!-- BACK TO MAIN MENU -->
+            <div class="col-12 mt-4">
+                <a asp-action="Index">Back to Topics</a>
+            </div>
+        </form>
+    </div>
+</div>
+

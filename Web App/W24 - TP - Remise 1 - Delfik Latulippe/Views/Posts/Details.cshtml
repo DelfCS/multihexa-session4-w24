@@ -1,0 +1,100 @@
+﻿@model W24___TP___Remise_1___Delfik_Latulippe.Models.Post
+
+@{
+	ViewData["Title"] = "Details";
+}
+
+<!-- Post details -->
+<div class="row d-flex text-center justify-content-center mb-3">
+	<!-- TOPIC NAME -->
+	<div class="px42Txt pinkText">
+		@Model.Topic.Name
+	</div>
+	<!-- TITLE -->
+	<div class="grayText px24Txt">
+		@Model.Title
+	</div>
+</div>
+
+<div>
+	<table class="table display-table grayText">
+		<tr>
+			<!-- BY -->
+			<th class="col-3">
+				By
+			</th>
+			<!-- DATE -->
+			<th class="col-3">
+				On
+			</th>
+			<!-- VIEWS -->
+			<th class="col-2">
+				Views
+			</th>
+			<!-- REPLIES -->
+			<th class="col-2">
+				Replies
+			</th>
+			<th class="col-2 text-center">
+				<!-- EDIT / DELETE -->
+			</th>
+		</tr>
+		<tr>
+			<!-- BY ... -->
+			<td class="col-2 grayText">
+				@Html.DisplayFor(model => model.User.UserName)
+			</td>
+			<!-- DATE ... -->
+			<td class="col-2 grayText">
+				@Html.DisplayFor(model => model.Date)
+			</td>
+			<!-- VIEWS ... -->
+			<td class="col-1 grayText">
+				@Html.DisplayFor(model => model.Views)
+			</td>
+			<!-- REPLIES -->
+			<td class="col-1 grayText">
+				@ViewData["Replies"]
+			</td>
+			<td>
+				<!-- EDIT / DELETE -->
+				<div class="col2 text-center">
+					<!-- Si l'usager est le créateur ou l'admin on permet l'edit -->
+					@if (User.Identity.Name == Model.User.UserName || User.IsInRole("Admin"))
+					{
+						<a asp-action="Edit" asp-route-postId="@Model.PostId">Edit</a>
+					}
+					<!-- Si l'usager est un admin, on permet la suppression (inactive) -->
+					@if (User.IsInRole("Admin"))
+					{
+						<a asp-action="Delete" asp-route-id="@Model.PostId">Delete</a>
+					}
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div class="row mb-2 grayText d-flex text-start m-lg-1 mb-2">
+		<!-- POST TEXT -->
+		@Html.Raw(Model.Text)
+	</div>
+
+	<hr class="grayText">
+
+	<!-- LAST X REPLIES -->
+	<div class="pinkText2 mt-5">
+		NO REPLIES
+	</div>
+
+	<div class="row mt-5">
+		<!-- BACK TO POSTS -->
+		<div class="col-6 text-center">
+			<a class="crudBtns1" asp-controller="Posts" asp-action="Index" asp-route-topicId="@Model.TopicId" asp-route-topicName="@ViewData["TopicName"]">BACK</a>
+		</div>
+		<!-- REPLY TO POST -->
+		<div class="col-6 text-center">
+			<a class="crudBtns1" asp-controller="Discussions" asp-action="Create" asp-route-postId="@Model.PostId" asp-route-topicName="@ViewData["TopicName"]"> REPLY</a>
+		</div>
+	</div>
+
+</div>
