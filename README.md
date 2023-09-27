@@ -11,7 +11,9 @@ Le forum se présente en 3 partie
     <li>Les réponses associées, qui sont également écrites par les utilisateurs</li>
 </ul>
 
+La grande majorité de mon code se retrouve dans les dossiers : Controllers, Models, Views et dans le fichier appsettings.json
 
+Le fichier word M24-TP-DelfikLatulippe résume l'entièreté de mon travail.
 
 
 
